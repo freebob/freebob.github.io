@@ -1,15 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://freebob.github.io</id>
-    <title>Gridea</title>
-    <updated>2020-05-28T21:06:30.880Z</updated>
+    <title>Idea</title>
+    <updated>2020-05-29T03:38:37.503Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://freebob.github.io"/>
     <link rel="self" href="https://freebob.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
+    <subtitle>学习修炼之旅</subtitle>
     <logo>https://freebob.github.io/images/avatar.png</logo>
     <icon>https://freebob.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, Gridea</rights>
+    <rights>All rights reserved 2020, Idea</rights>
+    <entry>
+        <title type="html"><![CDATA[科学计算之常微分方程的数值求解]]></title>
+        <id>https://freebob.github.io/post/ke-xue-ji-suan-zhi-chang-wei-fen-fang-cheng-de-shu-zhi-qiu-jie/</id>
+        <link href="https://freebob.github.io/post/ke-xue-ji-suan-zhi-chang-wei-fen-fang-cheng-de-shu-zhi-qiu-jie/">
+        </link>
+        <updated>2020-05-29T02:53:52.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="需求">需求</h1>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[科学计算之特征值与特征向量]]></title>
+        <id>https://freebob.github.io/post/ke-xue-ji-suan-zhi-te-zheng-zhi-yu-te-zheng-xiang-liang/</id>
+        <link href="https://freebob.github.io/post/ke-xue-ji-suan-zhi-te-zheng-zhi-yu-te-zheng-xiang-liang/">
+        </link>
+        <updated>2020-05-29T02:50:14.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="特征值-特征向量的定义">特征值、特征向量的定义</h1>
+<h1 id="常用的定理">常用的定理</h1>
+<h1 id="求特征值-特征向量">求特征值、特征向量</h1>
+<h1 id="大型矩阵的特征值估计幂法">大型矩阵的特征值估计——幂法</h1>
+<h1 id="中小型矩阵的特征值迭代求解qr分解">中小型矩阵的特征值迭代求解——QR分解</h1>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[科学计算之绪论]]></title>
+        <id>https://freebob.github.io/post/ke-xue-ji-suan-zhi-xu-lun/</id>
+        <link href="https://freebob.github.io/post/ke-xue-ji-suan-zhi-xu-lun/">
+        </link>
+        <updated>2020-05-29T02:48:43.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="误差来源">误差来源</h1>
+<h1 id="舍入误差分析">舍入误差分析</h1>
+<h1 id="误差计算">误差计算</h1>
+<h1 id="避免误差方法">避免误差方法</h1>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[科学计算之线性方程组的数值解]]></title>
+        <id>https://freebob.github.io/post/ke-xue-ji-suan-zhi-xian-xing-fang-cheng-zu-de-shu-zhi-jie/</id>
+        <link href="https://freebob.github.io/post/ke-xue-ji-suan-zhi-xian-xing-fang-cheng-zu-de-shu-zhi-jie/">
+        </link>
+        <updated>2020-05-29T00:23:55.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="cramer法则">Cramer法则</h1>
+<h1 id="guass消元法">Guass消元法</h1>
+<h1 id="全主元消元法">全主元消元法</h1>
+<h1 id="列主元消元法">列主元消元法</h1>
+<h1 id="gauss-jordan消去法">Gauss-Jordan消去法</h1>
+<h1 id="guass消元法的矩阵形式三角分解法">Guass消元法的矩阵形式——三角分解法</h1>
+<h2 id="doolittle分解">Doolittle分解</h2>
+<h2 id="crout分解">Crout分解</h2>
+<h2 id="特殊矩阵分解法">特殊矩阵分解法</h2>
+<h3 id="对称正定矩阵的分解平方根法">对称正定矩阵的分解——平方根法</h3>
+<h3 id="三对角矩阵的分解追赶法">三对角矩阵的分解——追赶法</h3>
+<h1 id="线性方程组的误差分析">线性方程组的误差分析</h1>
+<h2 id="向量范数和矩阵范数">向量范数和矩阵范数</h2>
+<h2 id="矩阵的条件数">矩阵的条件数</h2>
+<h2 id="对误差的改善">对误差的改善</h2>
+<h1 id="线性方程组的迭代解">线性方程组的迭代解</h1>
+<h2 id="雅可比迭代法">雅可比迭代法</h2>
+<h2 id="高斯-赛得尔迭代法">高斯-赛得尔迭代法</h2>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[写给自己的话]]></title>
+        <id>https://freebob.github.io/post/ru-men-lu-jing/</id>
+        <link href="https://freebob.github.io/post/ru-men-lu-jing/">
+        </link>
+        <updated>2020-05-28T21:20:40.000Z</updated>
+        <content type="html"><![CDATA[<p>🚀送你上青天</p>
+<p>从今天起，<br>
+好好睡觉，<br>
+好好吃饭，<br>
+认真学习，<br>
+认真生活。<br>
+做一个有意思的人！</p>
+<p>🛫遨游知识的海洋</p>
+<p>为了锻炼自己的语言组织能力和表达能力，我决定把日常所学习到的知识能够总结在这里，和大家一起分享我对这些知识的所感所悟，表达出我对这些知识最真实的感受和理解，大家一起进步！</p>
+<p>🎡现在正是备考周，我希望能有时间把《科学计算》复习的内容（不如说预习更真实🤣）总结在这里，作为第一份礼物。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://freebob.github.io/post/hello-gridea/</id>

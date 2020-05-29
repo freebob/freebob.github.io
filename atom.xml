@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://freebob.github.io</id>
-    <title>Idea</title>
-    <updated>2020-05-29T03:55:36.277Z</updated>
+    <title>MyIdeas</title>
+    <updated>2020-05-29T05:36:15.943Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://freebob.github.io"/>
     <link rel="self" href="https://freebob.github.io/atom.xml"/>
     <subtitle>学习修炼之旅</subtitle>
     <logo>https://freebob.github.io/images/avatar.png</logo>
     <icon>https://freebob.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, Idea</rights>
+    <rights>All rights reserved 2020, MyIdeas</rights>
     <entry>
         <title type="html"><![CDATA[科学计算之常微分方程的数值求解]]></title>
         <id>https://freebob.github.io/post/ke-xue-ji-suan-zhi-chang-wei-fen-fang-cheng-de-shu-zhi-qiu-jie/</id>
@@ -50,24 +50,24 @@
         <link href="https://freebob.github.io/post/ke-xue-ji-suan-zhi-xian-xing-fang-cheng-zu-de-shu-zhi-jie/">
         </link>
         <updated>2020-05-29T00:23:55.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="cramer法则">Cramer法则</h1>
-<h1 id="guass消元法">Guass消元法</h1>
-<h1 id="全主元消元法">全主元消元法</h1>
-<h1 id="列主元消元法">列主元消元法</h1>
-<h1 id="gauss-jordan消去法">Gauss-Jordan消去法</h1>
-<h1 id="guass消元法的矩阵形式三角分解法">Guass消元法的矩阵形式——三角分解法</h1>
-<h2 id="doolittle分解">Doolittle分解</h2>
-<h2 id="crout分解">Crout分解</h2>
-<h2 id="特殊矩阵分解法">特殊矩阵分解法</h2>
-<h3 id="对称正定矩阵的分解平方根法">对称正定矩阵的分解——平方根法</h3>
-<h3 id="三对角矩阵的分解追赶法">三对角矩阵的分解——追赶法</h3>
-<h1 id="线性方程组的误差分析">线性方程组的误差分析</h1>
-<h2 id="向量范数和矩阵范数">向量范数和矩阵范数</h2>
-<h2 id="矩阵的条件数">矩阵的条件数</h2>
-<h2 id="对误差的改善">对误差的改善</h2>
-<h1 id="线性方程组的迭代解">线性方程组的迭代解</h1>
-<h2 id="雅可比迭代法">雅可比迭代法</h2>
-<h2 id="高斯-赛得尔迭代法">高斯-赛得尔迭代法</h2>
+        <content type="html"><![CDATA[<h3 id="cramer法则">Cramer法则</h3>
+<h3 id="guass消元法">Guass消元法</h3>
+<h3 id="全主元消元法">全主元消元法</h3>
+<h3 id="列主元消元法">列主元消元法</h3>
+<h3 id="gauss-jordan消去法">Gauss-Jordan消去法</h3>
+<h3 id="guass消元法的矩阵形式三角分解法">Guass消元法的矩阵形式——三角分解法</h3>
+<h4 id="doolittle分解">Doolittle分解</h4>
+<h4 id="crout分解">Crout分解</h4>
+<h4 id="特殊矩阵分解法">特殊矩阵分解法</h4>
+<h5 id="对称正定矩阵的分解平方根法">对称正定矩阵的分解——平方根法</h5>
+<h5 id="三对角矩阵的分解追赶法">三对角矩阵的分解——追赶法</h5>
+<h3 id="线性方程组的误差分析">线性方程组的误差分析</h3>
+<h4 id="向量范数和矩阵范数">向量范数和矩阵范数</h4>
+<h4 id="矩阵的条件数">矩阵的条件数</h4>
+<h4 id="对误差的改善">对误差的改善</h4>
+<h3 id="线性方程组的迭代解">线性方程组的迭代解</h3>
+<h4 id="雅可比迭代法">雅可比迭代法</h4>
+<h4 id="高斯-赛得尔迭代法">高斯-赛得尔迭代法</h4>
 ]]></content>
     </entry>
     <entry>

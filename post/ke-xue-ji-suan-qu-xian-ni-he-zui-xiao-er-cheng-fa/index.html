@@ -1,22 +1,100 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://freebob.github.io</id>
-    <title>MyIdeas</title>
-    <updated>2020-06-16T00:13:42.397Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://freebob.github.io"/>
-    <link rel="self" href="https://freebob.github.io/atom.xml"/>
-    <subtitle>学习修炼之旅</subtitle>
-    <logo>https://freebob.github.io/images/avatar.png</logo>
-    <icon>https://freebob.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, MyIdeas</rights>
-    <entry>
-        <title type="html"><![CDATA[[科学计算]曲线拟合——最小二乘法 ]]></title>
-        <id>https://freebob.github.io/post/ke-xue-ji-suan-qu-xian-ni-he-zui-xiao-er-cheng-fa/</id>
-        <link href="https://freebob.github.io/post/ke-xue-ji-suan-qu-xian-ni-he-zui-xiao-er-cheng-fa/">
-        </link>
-        <updated>2020-06-15T23:51:32.000Z</updated>
-        <content type="html"><![CDATA[<p>🚀宁可十年不将军，不可一日不拱卒</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>[科学计算]曲线拟合——最小二乘法  | MyIdeas</title>
+<meta name="description" content="学习修炼之旅">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://freebob.github.io/favicon.ico?v=1592266307099">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://freebob.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://freebob.github.io">MyIdeas</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="/" class="menu">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/about" class="menu">
+                关于
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>[科学计算]曲线拟合——最小二乘法 </h1>
+            <p class="article-meta">
+              2020-06-16
+              
+            </p>
+            
+            <div class="post-content">
+              <p>🚀宁可十年不将军，不可一日不拱卒</p>
 <p>问题：已知 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>x</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mtext> </mtext><mo separator="true">,</mo><msub><mi>x</mi><mi>m</mi></msub><mo separator="true">;</mo><msub><mi>y</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>y</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mtext> </mtext><mo separator="true">,</mo><msub><mi>y</mi><mi>m</mi></msub><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">x_1,x_2,\cdots,x_m;y_1,y_2,\cdots,y_m.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">m</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">m</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">.</span></span></span></span> 求一个简单易算的近似函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>≈</mo><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">P(x) \approx f(x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span></span> 。 但是此时 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span> 很大，而且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>y</mi><mi>i</mi></msub><mi mathvariant="normal">≠</mi><mi>f</mi><mo>(</mo><msub><mi>x</mi><mi>i</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">y_i \neq f(x_i)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel"><span class="mrel"><span class="mord"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="rlap"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="inner"><span class="mrel"></span></span><span class="fix"></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span><span class="mrel">=</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> ，因此这个时候数值插值就无可奈何了，没有必要再令 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><msub><mi>x</mi><mi>i</mi></msub><mo>)</mo><mo>=</mo><msub><mi>y</mi><mi>i</mi></msub><mi mathvariant="normal">.</mi><mi>i</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mo>⋯</mo><mtext> </mtext><mo separator="true">,</mo><mi>m</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">P(x_i)=y_i.i=1,2,\cdots,m.</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">.</span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mord">.</span></span></span></span> 了，否则会造成过拟合现象，而偏离真实 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span></span> 。我们的目标仅仅是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><msub><mi>x</mi><mi>i</mi></msub><mo>)</mo><mo>−</mo><msub><mi>y</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">P(x_i)-y_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 总体上尽可能的小。</p>
 <p>常见的作法有：</p>
 <ul>
@@ -91,84 +169,164 @@
 <li>拟合与插值的区别是什么？</li>
 </ol>
 <p>🛴未完待续~~~</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[科学计算之常微分方程的数值求解]]></title>
-        <id>https://freebob.github.io/post/ke-xue-ji-suan-zhi-chang-wei-fen-fang-cheng-de-shu-zhi-qiu-jie/</id>
-        <link href="https://freebob.github.io/post/ke-xue-ji-suan-zhi-chang-wei-fen-fang-cheng-de-shu-zhi-qiu-jie/">
-        </link>
-        <updated>2020-05-29T02:53:52.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="需求">需求</h1>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[科学计算之特征值与特征向量]]></title>
-        <id>https://freebob.github.io/post/ke-xue-ji-suan-zhi-te-zheng-zhi-yu-te-zheng-xiang-liang/</id>
-        <link href="https://freebob.github.io/post/ke-xue-ji-suan-zhi-te-zheng-zhi-yu-te-zheng-xiang-liang/">
-        </link>
-        <updated>2020-05-29T02:50:14.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="特征值-特征向量的定义">特征值、特征向量的定义</h1>
-<h1 id="常用的定理">常用的定理</h1>
-<h1 id="求特征值-特征向量">求特征值、特征向量</h1>
-<h1 id="大型矩阵的特征值估计幂法">大型矩阵的特征值估计——幂法</h1>
-<h1 id="中小型矩阵的特征值迭代求解qr分解">中小型矩阵的特征值迭代求解——QR分解</h1>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[科学计算之绪论]]></title>
-        <id>https://freebob.github.io/post/ke-xue-ji-suan-zhi-xu-lun/</id>
-        <link href="https://freebob.github.io/post/ke-xue-ji-suan-zhi-xu-lun/">
-        </link>
-        <updated>2020-05-29T02:48:43.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="误差来源">误差来源</h1>
-<h1 id="舍入误差分析">舍入误差分析</h1>
-<h1 id="误差计算">误差计算</h1>
-<h1 id="避免误差方法">避免误差方法</h1>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[科学计算之线性方程组的数值解]]></title>
-        <id>https://freebob.github.io/post/ke-xue-ji-suan-zhi-xian-xing-fang-cheng-zu-de-shu-zhi-jie/</id>
-        <link href="https://freebob.github.io/post/ke-xue-ji-suan-zhi-xian-xing-fang-cheng-zu-de-shu-zhi-jie/">
-        </link>
-        <updated>2020-05-29T00:23:55.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="cramer法则">Cramer法则</h3>
-<h3 id="guass消元法">Guass消元法</h3>
-<h3 id="全主元消元法">全主元消元法</h3>
-<h3 id="列主元消元法">列主元消元法</h3>
-<h3 id="gauss-jordan消去法">Gauss-Jordan消去法</h3>
-<h3 id="guass消元法的矩阵形式三角分解法">Guass消元法的矩阵形式——三角分解法</h3>
-<h4 id="doolittle分解">Doolittle分解</h4>
-<h4 id="crout分解">Crout分解</h4>
-<h4 id="特殊矩阵分解法">特殊矩阵分解法</h4>
-<h5 id="对称正定矩阵的分解平方根法">对称正定矩阵的分解——平方根法</h5>
-<h5 id="三对角矩阵的分解追赶法">三对角矩阵的分解——追赶法</h5>
-<h3 id="线性方程组的误差分析">线性方程组的误差分析</h3>
-<h4 id="向量范数和矩阵范数">向量范数和矩阵范数</h4>
-<h4 id="矩阵的条件数">矩阵的条件数</h4>
-<h4 id="对误差的改善">对误差的改善</h4>
-<h3 id="线性方程组的迭代解">线性方程组的迭代解</h3>
-<h4 id="雅可比迭代法">雅可比迭代法</h4>
-<h4 id="高斯-赛得尔迭代法">高斯-赛得尔迭代法</h4>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[写给自己的话]]></title>
-        <id>https://freebob.github.io/post/ru-men-lu-jing/</id>
-        <link href="https://freebob.github.io/post/ru-men-lu-jing/">
-        </link>
-        <updated>2020-05-28T21:20:40.000Z</updated>
-        <content type="html"><![CDATA[<p>🚀送你上青天</p>
-<p>从今天起，<br>
-好好睡觉，<br>
-好好吃饭，<br>
-认真学习，<br>
-认真生活。<br>
-做一个有意思的人！</p>
-<p>🛫遨游知识的海洋</p>
-<p>为了锻炼自己的语言组织能力和表达能力，我决定把日常所学习到的知识能够总结在这里，和大家一起分享我对这些知识的所感所悟，表达出我对这些知识最真实的感受和理解，大家一起进步！</p>
-<p>🎡现在正是备考周，我希望能有时间把《科学计算》复习的内容（不如说预习更真实🤣）总结在这里，作为第一份礼物。</p>
-]]></content>
-    </entry>
-</feed>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://freebob.github.io/post/ke-xue-ji-suan-zhi-chang-wei-fen-fang-cheng-de-shu-zhi-qiu-jie/">
+                <h3 class="post-title">
+                  科学计算之常微分方程的数值求解
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+          
+            <div class="paper" data-aos="fade-in">
+              <div id="gitalk-container"></div>
+            </div>
+          
+
+          
+        
+      </div>
+
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://freebob.github.io/images/avatar.png?v=1592266307099" class="no-responsive avatar">
+    <div class="text-muted">学习修炼之旅</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://freebob.github.io/post/ke-xue-ji-suan-qu-xian-ni-he-zui-xiao-er-cheng-fa/">[科学计算]曲线拟合——最小二乘法 </a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://freebob.github.io/post/ke-xue-ji-suan-zhi-chang-wei-fen-fang-cheng-de-shu-zhi-qiu-jie/">科学计算之常微分方程的数值求解</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://freebob.github.io/post/ke-xue-ji-suan-zhi-te-zheng-zhi-yu-te-zheng-xiang-liang/">科学计算之特征值与特征向量</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://freebob.github.io/post/ke-xue-ji-suan-zhi-xu-lun/">科学计算之绪论</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://freebob.github.io/post/ke-xue-ji-suan-zhi-xian-xing-fang-cheng-zu-de-shu-zhi-jie/">科学计算之线性方程组的数值解</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://freebob.github.io/post/ru-men-lu-jing/">写给自己的话</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://freebob.github.io/post/about/">关于</a>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://freebob.github.io/tag/n-3cd_YWg/" class="badge ">
+          科学计算
+        </a>
+      
+        <a href="https://freebob.github.io/tag/Uux72y1LH/" class="badge ">
+          我的介绍
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://freebob.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '085b7ee76d37f68ea467',
+        clientSecret: 'a83071d2759e5dffb2db72dc83fc62a490c5adbe',
+        repo: 'freebob.github.io',
+        owner: 'freebob',
+        admin: ['freebob'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
